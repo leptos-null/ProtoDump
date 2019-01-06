@@ -1,0 +1,9 @@
+Package: null.leptos.protodump
+Name: protodump
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Injection library for the command line to dump Google Protobufs from a binary
+Maintainer: Leptos <leptos.0.null@gmail.com>
+Author: Leptos <leptos.0.null@gmail.com>
+Section: System
+Tag: role::developer

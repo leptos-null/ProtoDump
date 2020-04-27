@@ -7,10 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA1AF79F24576EAC00C5AFE3 /* SearchResponse.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA1AF7A024576EAC00C5AFE3 /* SearchRequest.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FA1AF7AF24576F8100C5AFE3 /* libprotodump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA55AA9121C758CF00CE60ED /* libprotodump.a */; };
+		FA1AF7B324576F8D00C5AFE3 /* libProtobuf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1AF7B224576F8D00C5AFE3 /* libProtobuf.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		FA55AA9621C758CF00CE60ED /* protodump.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AA9521C758CF00CE60ED /* protodump.m */; };
 		FA55AAA121CC0BD500CE60ED /* LSProtoAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */; };
-		FA55AAA721CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.m */; };
+		FA55AAA721CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m */; };
+		FA8FE2C324574D8D00DDD29D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8FE2C224574D8D00DDD29D /* main.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA1AF7B024576F8100C5AFE3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA55AA8921C758CF00CE60ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA55AA9021C758CF00CE60ED;
+			remoteInfo = protodump;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		FA55AA8F21C758CF00CE60ED /* CopyFiles */ = {
@@ -22,15 +37,41 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA8FE2BE24574D8D00DDD29D /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		206FF0ABCA8464ED0E957410 /* Pods-protodump.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protodump.release.xcconfig"; path = "Pods/Target Support Files/Pods-protodump/Pods-protodump.release.xcconfig"; sourceTree = "<group>"; };
+		6DE37DB705898B1E6AB39DA2 /* Pods-protodump.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protodump.debug.xcconfig"; path = "Pods/Target Support Files/Pods-protodump/Pods-protodump.debug.xcconfig"; sourceTree = "<group>"; };
+		9654939F690673FA9FB7C159 /* Pods-protodump-protouser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protodump-protouser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-protodump-protouser/Pods-protodump-protouser.debug.xcconfig"; sourceTree = "<group>"; };
+		BDA7DF7346E52B3B88634C38 /* libPods-protodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-protodump.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6492E12DCDE1DF704C3390E /* libPods-protodump-protouser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-protodump-protouser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResponse.pbobjc.m; sourceTree = "<group>"; };
+		FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequest.pbobjc.m; sourceTree = "<group>"; };
+		FA1AF79D24576EAC00C5AFE3 /* SearchResponse.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResponse.pbobjc.h; sourceTree = "<group>"; };
+		FA1AF79E24576EAC00C5AFE3 /* SearchRequest.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequest.pbobjc.h; sourceTree = "<group>"; };
+		FA1AF7A624576F3E00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1AF7AB24576F6D00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1AF7AD24576F7A00C5AFE3 /* libPods-protodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-protodump.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1AF7B224576F8D00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA55AA9121C758CF00CE60ED /* libprotodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libprotodump.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA55AA9521C758CF00CE60ED /* protodump.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = protodump.m; sourceTree = "<group>"; };
 		FA55AA9F21CC0BD400CE60ED /* LSProtoAnalyser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSProtoAnalyser.h; sourceTree = "<group>"; };
 		FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSProtoAnalyser.m; sourceTree = "<group>"; };
-		FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSProtoAnalyser+LSProtoStringGeneration.h"; sourceTree = "<group>"; };
-		FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LSProtoAnalyser+LSProtoStringGeneration.m"; sourceTree = "<group>"; };
+		FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSProtoAnalyser+LSStringGen.h"; sourceTree = "<group>"; };
+		FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LSProtoAnalyser+LSStringGen.m"; sourceTree = "<group>"; };
+		FA8FE2C024574D8D00DDD29D /* protouser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = protouser; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA8FE2C224574D8D00DDD29D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FA8FE2D1245763F600DDD29D /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC03DA33F3FE7B8C7A339159 /* Pods-protodump-protouser.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protodump-protouser.release.xcconfig"; path = "Pods/Target Support Files/Pods-protodump-protouser/Pods-protodump-protouser.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,14 +82,62 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FA8FE2BD24574D8D00DDD29D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1AF7AF24576F8100C5AFE3 /* libprotodump.a in Frameworks */,
+				FA1AF7B324576F8D00C5AFE3 /* libProtobuf.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		119433CA99D1DFBB528459C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA1AF7B224576F8D00C5AFE3 /* libProtobuf.a */,
+				FA1AF7AD24576F7A00C5AFE3 /* libPods-protodump.a */,
+				FA1AF7AB24576F6D00C5AFE3 /* libProtobuf.a */,
+				FA1AF7A624576F3E00C5AFE3 /* libProtobuf.a */,
+				FA8FE2D1245763F600DDD29D /* libProtobuf.a */,
+				BDA7DF7346E52B3B88634C38 /* libPods-protodump.a */,
+				C6492E12DCDE1DF704C3390E /* libPods-protodump-protouser.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6333D5D8BBAF0F67CB3DBE4 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6DE37DB705898B1E6AB39DA2 /* Pods-protodump.debug.xcconfig */,
+				206FF0ABCA8464ED0E957410 /* Pods-protodump.release.xcconfig */,
+				9654939F690673FA9FB7C159 /* Pods-protodump-protouser.debug.xcconfig */,
+				FC03DA33F3FE7B8C7A339159 /* Pods-protodump-protouser.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FA1AF79A24576EAC00C5AFE3 /* protos_objc */ = {
+			isa = PBXGroup;
+			children = (
+				FA1AF79E24576EAC00C5AFE3 /* SearchRequest.pbobjc.h */,
+				FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */,
+				FA1AF79D24576EAC00C5AFE3 /* SearchResponse.pbobjc.h */,
+				FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */,
+			);
+			path = protos_objc;
+			sourceTree = "<group>";
+		};
 		FA55AA8821C758CF00CE60ED = {
 			isa = PBXGroup;
 			children = (
 				FA55AA9321C758CF00CE60ED /* protodump */,
+				FA8FE2C124574D8D00DDD29D /* protouser */,
 				FA55AA9221C758CF00CE60ED /* Products */,
+				119433CA99D1DFBB528459C7 /* Frameworks */,
+				B6333D5D8BBAF0F67CB3DBE4 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				FA55AA9121C758CF00CE60ED /* libprotodump.a */,
+				FA8FE2C024574D8D00DDD29D /* protouser */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -65,11 +155,20 @@
 			children = (
 				FA55AA9F21CC0BD400CE60ED /* LSProtoAnalyser.h */,
 				FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */,
-				FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.h */,
-				FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.m */,
+				FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.h */,
+				FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m */,
 				FA55AA9521C758CF00CE60ED /* protodump.m */,
 			);
 			path = protodump;
+			sourceTree = "<group>";
+		};
+		FA8FE2C124574D8D00DDD29D /* protouser */ = {
+			isa = PBXGroup;
+			children = (
+				FA1AF79A24576EAC00C5AFE3 /* protos_objc */,
+				FA8FE2C224574D8D00DDD29D /* main.m */,
+			);
+			path = protouser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -79,6 +178,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FA55AA9A21C758CF00CE60ED /* Build configuration list for PBXNativeTarget "protodump" */;
 			buildPhases = (
+				0D403223C7E84C39B18C03FD /* [CP] Check Pods Manifest.lock */,
 				FA55AA8D21C758CF00CE60ED /* Sources */,
 				FA55AA8E21C758CF00CE60ED /* Frameworks */,
 				FA55AA8F21C758CF00CE60ED /* CopyFiles */,
@@ -92,6 +192,25 @@
 			productReference = FA55AA9121C758CF00CE60ED /* libprotodump.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		FA8FE2BF24574D8D00DDD29D /* protouser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA8FE2C624574D8D00DDD29D /* Build configuration list for PBXNativeTarget "protouser" */;
+			buildPhases = (
+				D3FF97E1CC0C3829A2C6A1B3 /* [CP] Check Pods Manifest.lock */,
+				FA8FE2BC24574D8D00DDD29D /* Sources */,
+				FA8FE2BD24574D8D00DDD29D /* Frameworks */,
+				FA8FE2BE24574D8D00DDD29D /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA1AF7B124576F8100C5AFE3 /* PBXTargetDependency */,
+			);
+			name = protouser;
+			productName = protouser;
+			productReference = FA8FE2C024574D8D00DDD29D /* protouser */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -104,6 +223,9 @@
 					FA55AA9021C758CF00CE60ED = {
 						CreatedOnToolsVersion = 10.1;
 					};
+					FA8FE2BF24574D8D00DDD29D = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
 				};
 			};
 			buildConfigurationList = FA55AA8C21C758CF00CE60ED /* Build configuration list for PBXProject "protodump" */;
@@ -112,6 +234,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = FA55AA8821C758CF00CE60ED;
 			productRefGroup = FA55AA9221C758CF00CE60ED /* Products */;
@@ -119,9 +242,57 @@
 			projectRoot = "";
 			targets = (
 				FA55AA9021C758CF00CE60ED /* protodump */,
+				FA8FE2BF24574D8D00DDD29D /* protouser */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D403223C7E84C39B18C03FD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-protodump-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D3FF97E1CC0C3829A2C6A1B3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-protodump-protouser-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FA55AA8D21C758CF00CE60ED /* Sources */ = {
@@ -130,11 +301,29 @@
 			files = (
 				FA55AAA121CC0BD500CE60ED /* LSProtoAnalyser.m in Sources */,
 				FA55AA9621C758CF00CE60ED /* protodump.m in Sources */,
-				FA55AAA721CC611B00CE60ED /* LSProtoAnalyser+LSProtoStringGeneration.m in Sources */,
+				FA55AAA721CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA8FE2BC24574D8D00DDD29D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA1AF7A024576EAC00C5AFE3 /* SearchRequest.pbobjc.m in Sources */,
+				FA8FE2C324574D8D00DDD29D /* main.m in Sources */,
+				FA1AF79F24576EAC00C5AFE3 /* SearchResponse.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA1AF7B124576F8100C5AFE3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA55AA9021C758CF00CE60ED /* protodump */;
+			targetProxy = FA1AF7B024576F8100C5AFE3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FA55AA9821C758CF00CE60ED /* Debug */ = {
@@ -189,6 +378,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -242,6 +432,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -251,25 +442,55 @@
 		};
 		FA55AA9B21C758CF00CE60ED /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6DE37DB705898B1E6AB39DA2 /* Pods-protodump.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		FA55AA9C21C758CF00CE60ED /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 206FF0ABCA8464ED0E957410 /* Pods-protodump.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				MACH_O_TYPE = mh_dylib;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA8FE2C424574D8D00DDD29D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9654939F690673FA9FB7C159 /* Pods-protodump-protouser.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
+			};
+			name = Debug;
+		};
+		FA8FE2C524574D8D00DDD29D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC03DA33F3FE7B8C7A339159 /* Pods-protodump-protouser.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7P56K8K4MY;
+				OTHER_LDFLAGS = "-Objc";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SUPPORTED_PLATFORMS = macosx;
 			};
 			name = Release;
 		};
@@ -290,6 +511,15 @@
 			buildConfigurations = (
 				FA55AA9B21C758CF00CE60ED /* Debug */,
 				FA55AA9C21C758CF00CE60ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA8FE2C624574D8D00DDD29D /* Build configuration list for PBXNativeTarget "protouser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA8FE2C424574D8D00DDD29D /* Debug */,
+				FA8FE2C524574D8D00DDD29D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

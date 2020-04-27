@@ -9,14 +9,14 @@
 #import <Foundation/Foundation.h>
 #import <objc/runtime.h>
 
-#import "../protobuf/objectivec/GPBMessage.h"
-#import "../protobuf/objectivec/GPBDescriptor.h"
+#import <protobuf/GPBMessage.h>
+#import <protobuf/GPBDescriptor.h>
 
 #define LS_PROTO_ANONYMOUS_PACKAGE_DIRECTORY "0_ANONYMOUS_PACKAGE"
 
 // Do not use `LSInternalStateWithMessage` directly, it doesn't have direct boolean support
 
-/* wnat's cool about this setup is that it allows the __restrict portion to be
+/* what's cool about this setup is that it allows the __restrict portion to be
  * an NSString constant, a C char array constant, or absolutely nothing at all.
  *
  * e.g. valid uses:

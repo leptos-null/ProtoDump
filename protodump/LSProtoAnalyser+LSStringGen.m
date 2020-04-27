@@ -1,14 +1,14 @@
 //
-//  LSProtoAnalyser+LSProtoStringGeneration.m
+//  LSProtoAnalyser+LSStringGen.m
 //  protodump
 //
 //  Created by Leptos on 12/20/18.
 //  Copyright © 2018 Leptos. All rights reserved.
 //
 
-#import "LSProtoAnalyser+LSProtoStringGeneration.h"
+#import "LSProtoAnalyser+LSStringGen.h"
 
-@implementation LSProtoAnalyser (LSProtoStringGeneration)
+@implementation LSProtoAnalyser (LSStringGen)
 
 static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
     NSString *ret = nil;

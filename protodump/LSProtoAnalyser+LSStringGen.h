@@ -1,5 +1,5 @@
 //
-//  LSProtoAnalyser+LSProtoStringGeneration.h
+//  LSProtoAnalyser+LSStringGen.h
 //  protodump
 //
 //  Created by Leptos on 12/20/18.
@@ -8,7 +8,7 @@
 
 #import "LSProtoAnalyser.h"
 
-@interface LSProtoAnalyser (LSProtoStringGeneration)
+@interface LSProtoAnalyser (LSStringGen)
 
 /// Recreate the file.proto a descriptor represents
 - (NSString *)protoFileForTopLevelMessage:(GPBDescriptor *)message;

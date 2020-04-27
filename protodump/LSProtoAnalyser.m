@@ -7,7 +7,6 @@
 //
 
 #import "LSProtoAnalyser.h"
-#import "LSProtoAnalyser+LSProtoStringGeneration.h"
 
 @implementation LSProtoAnalyser
 

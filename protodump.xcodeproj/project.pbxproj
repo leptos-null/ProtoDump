@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FA1AF79F24576EAC00C5AFE3 /* SearchResponse.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FA1AF7A024576EAC00C5AFE3 /* SearchRequest.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA1AF7AF24576F8100C5AFE3 /* libprotodump.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA55AA9121C758CF00CE60ED /* libprotodump.a */; };
 		FA1AF7B324576F8D00C5AFE3 /* libProtobuf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA1AF7B224576F8D00C5AFE3 /* libProtobuf.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		FA55AA9621C758CF00CE60ED /* protodump.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AA9521C758CF00CE60ED /* protodump.m */; };
 		FA55AAA121CC0BD500CE60ED /* LSProtoAnalyser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */; };
 		FA55AAA721CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m in Sources */ = {isa = PBXBuildFile; fileRef = FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m */; };
+		FA7084AA246EFAD10063BE0B /* SearchRequest.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7084A8246EFAD00063BE0B /* SearchRequest.pbobjc.m */; };
+		FA7084AB246EFAD10063BE0B /* SearchResponse.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = FA7084A9246EFAD10063BE0B /* SearchResponse.pbobjc.m */; };
 		FA8FE2C324574D8D00DDD29D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA8FE2C224574D8D00DDD29D /* main.m */; };
 /* End PBXBuildFile section */
 
@@ -54,20 +54,26 @@
 		9654939F690673FA9FB7C159 /* Pods-protodump-protouser.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-protodump-protouser.debug.xcconfig"; path = "Pods/Target Support Files/Pods-protodump-protouser/Pods-protodump-protouser.debug.xcconfig"; sourceTree = "<group>"; };
 		BDA7DF7346E52B3B88634C38 /* libPods-protodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-protodump.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6492E12DCDE1DF704C3390E /* libPods-protodump-protouser.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-protodump-protouser.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResponse.pbobjc.m; sourceTree = "<group>"; };
-		FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequest.pbobjc.m; sourceTree = "<group>"; };
-		FA1AF79D24576EAC00C5AFE3 /* SearchResponse.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResponse.pbobjc.h; sourceTree = "<group>"; };
-		FA1AF79E24576EAC00C5AFE3 /* SearchRequest.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequest.pbobjc.h; sourceTree = "<group>"; };
 		FA1AF7A624576F3E00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1AF7AB24576F6D00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1AF7AD24576F7A00C5AFE3 /* libPods-protodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-protodump.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA1AF7B224576F8D00C5AFE3 /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA1AF7B524577A0300C5AFE3 /* SearchResponse.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = SearchResponse.proto; sourceTree = "<group>"; };
+		FA1AF7B624577A0300C5AFE3 /* SearchRequest.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = SearchRequest.proto; sourceTree = "<group>"; };
+		FA1AF7D02457C88E00C5AFE3 /* Recurse.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.protobuf; path = Recurse.proto; sourceTree = "<group>"; };
+		FA1AF7D32457CB4600C5AFE3 /* Recurse.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Recurse.pbobjc.m; sourceTree = "<group>"; };
+		FA1AF7D42457CB4600C5AFE3 /* Recurse.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Recurse.pbobjc.h; sourceTree = "<group>"; };
+		FA1AF7D62457CD4500C5AFE3 /* LSExpectState.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSExpectState.h; sourceTree = "<group>"; };
 		FA55AA9121C758CF00CE60ED /* libprotodump.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libprotodump.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA55AA9521C758CF00CE60ED /* protodump.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = protodump.m; sourceTree = "<group>"; };
 		FA55AA9F21CC0BD400CE60ED /* LSProtoAnalyser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LSProtoAnalyser.h; sourceTree = "<group>"; };
 		FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LSProtoAnalyser.m; sourceTree = "<group>"; };
 		FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LSProtoAnalyser+LSStringGen.h"; sourceTree = "<group>"; };
 		FA55AAA621CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "LSProtoAnalyser+LSStringGen.m"; sourceTree = "<group>"; };
+		FA7084A6246EFAD00063BE0B /* SearchRequest.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequest.pbobjc.h; sourceTree = "<group>"; };
+		FA7084A7246EFAD00063BE0B /* SearchResponse.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResponse.pbobjc.h; sourceTree = "<group>"; };
+		FA7084A8246EFAD00063BE0B /* SearchRequest.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequest.pbobjc.m; sourceTree = "<group>"; };
+		FA7084A9246EFAD10063BE0B /* SearchResponse.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResponse.pbobjc.m; sourceTree = "<group>"; };
 		FA8FE2C024574D8D00DDD29D /* protouser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = protouser; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA8FE2C224574D8D00DDD29D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FA8FE2D1245763F600DDD29D /* libProtobuf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libProtobuf.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,12 +128,24 @@
 		FA1AF79A24576EAC00C5AFE3 /* protos_objc */ = {
 			isa = PBXGroup;
 			children = (
-				FA1AF79E24576EAC00C5AFE3 /* SearchRequest.pbobjc.h */,
-				FA1AF79C24576EAC00C5AFE3 /* SearchRequest.pbobjc.m */,
-				FA1AF79D24576EAC00C5AFE3 /* SearchResponse.pbobjc.h */,
-				FA1AF79B24576EAC00C5AFE3 /* SearchResponse.pbobjc.m */,
+				FA7084A6246EFAD00063BE0B /* SearchRequest.pbobjc.h */,
+				FA7084A8246EFAD00063BE0B /* SearchRequest.pbobjc.m */,
+				FA7084A7246EFAD00063BE0B /* SearchResponse.pbobjc.h */,
+				FA7084A9246EFAD10063BE0B /* SearchResponse.pbobjc.m */,
+				FA1AF7D42457CB4600C5AFE3 /* Recurse.pbobjc.h */,
+				FA1AF7D32457CB4600C5AFE3 /* Recurse.pbobjc.m */,
 			);
 			path = protos_objc;
+			sourceTree = "<group>";
+		};
+		FA1AF7B424577A0300C5AFE3 /* protos */ = {
+			isa = PBXGroup;
+			children = (
+				FA1AF7B624577A0300C5AFE3 /* SearchRequest.proto */,
+				FA1AF7B524577A0300C5AFE3 /* SearchResponse.proto */,
+				FA1AF7D02457C88E00C5AFE3 /* Recurse.proto */,
+			);
+			path = protos;
 			sourceTree = "<group>";
 		};
 		FA55AA8821C758CF00CE60ED = {
@@ -153,6 +171,7 @@
 		FA55AA9321C758CF00CE60ED /* protodump */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AF7D62457CD4500C5AFE3 /* LSExpectState.h */,
 				FA55AA9F21CC0BD400CE60ED /* LSProtoAnalyser.h */,
 				FA55AAA021CC0BD500CE60ED /* LSProtoAnalyser.m */,
 				FA55AAA521CC611B00CE60ED /* LSProtoAnalyser+LSStringGen.h */,
@@ -165,6 +184,7 @@
 		FA8FE2C124574D8D00DDD29D /* protouser */ = {
 			isa = PBXGroup;
 			children = (
+				FA1AF7B424577A0300C5AFE3 /* protos */,
 				FA1AF79A24576EAC00C5AFE3 /* protos_objc */,
 				FA8FE2C224574D8D00DDD29D /* main.m */,
 			);
@@ -309,9 +329,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA1AF7A024576EAC00C5AFE3 /* SearchRequest.pbobjc.m in Sources */,
+				FA7084AA246EFAD10063BE0B /* SearchRequest.pbobjc.m in Sources */,
+				FA7084AB246EFAD10063BE0B /* SearchResponse.pbobjc.m in Sources */,
 				FA8FE2C324574D8D00DDD29D /* main.m in Sources */,
-				FA1AF79F24576EAC00C5AFE3 /* SearchResponse.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,19 +350,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -351,12 +373,10 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -364,17 +384,20 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -383,6 +406,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -390,19 +414,21 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_GCD_PERFORMANCE = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_RAND = YES;
+				CLANG_ANALYZER_SECURITY_INSECUREAPI_STRCPY = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_ASSIGN_ENUM = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_CXX0X_EXTENSIONS = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
@@ -411,12 +437,10 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__ARC_BRIDGE_CAST_NONARC = NO;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
@@ -425,10 +449,15 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -436,6 +465,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -450,7 +480,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -464,7 +493,6 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos macosx";
-				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -472,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9654939F690673FA9FB7C159 /* Pods-protodump-protouser.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
 				OTHER_LDFLAGS = "-Objc";
@@ -485,6 +514,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FC03DA33F3FE7B8C7A339159 /* Pods-protodump-protouser.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7P56K8K4MY;
 				OTHER_LDFLAGS = "-Objc";

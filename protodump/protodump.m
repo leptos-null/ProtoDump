@@ -10,6 +10,10 @@
 #import <libgen.h>
 #import "LSProtoAnalyser+LSStringGen.h"
 
+#ifndef PROTODUMP_USE_FILE_SYSTEM
+#   define PROTODUMP_USE_FILE_SYSTEM 0
+#endif /* PROTODUMP_USE_FILE_SYSTEM */
+
 static void _addDescriptionsToDescriptors() {
     IMP plainDescriptionImpl = imp_implementationWithBlock(^(GPBDescriptor *self) {
         return [NSString stringWithFormat:@"<%@: %p> fullName: %@, containingType: %@", self.class, self, self.fullName, self.containingType];
@@ -68,7 +72,7 @@ static void __attribute__((constructor)) didLoadWithArgs(int argc, char *argv[])
         }
     }
     endTime = CFAbsoluteTimeGetCurrent();
-    printf("[Stats] Wrote %lu files in %.2f seconds\n", filesWritten, endTime-startTime);
+    printf("[Stats] Wrote %" __UINTPTR_FMTu__ " files in %.2f seconds\n", (uintptr_t)filesWritten, endTime-startTime);
     
     exit(EXIT_SUCCESS);
 }

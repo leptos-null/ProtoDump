@@ -29,15 +29,14 @@ static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
     return ret;
 }
 
-- (NSString *)_indentStringForLevel:(size_t)level {
+- (NSString *)_indentStringForLevel:(NSUInteger)level {
     static const char spaceByte = ' ';
-    static const size_t indentSize = 4;
-    const size_t buffSize = (indentSize * level);
+    static const NSUInteger indentSize = 4;
+    const NSUInteger buffSize = indentSize * level;
     
-    char buff[buffSize + 1];
+    char *const buff = malloc(buffSize);
     memset(buff, spaceByte, buffSize);
-    buff[buffSize] = (char)NULL;
-    return @(buff);
+    return [[NSString alloc] initWithBytesNoCopy:buff length:buffSize encoding:NSASCIIStringEncoding freeWhenDone:YES];
 }
 
 - (NSString *)_stringValueOfNameForField:(GPBFieldDescriptor *)field message:(GPBDescriptor *)message {
@@ -65,7 +64,6 @@ static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
         case GPBDataTypeDouble:
             ret = @"double";
             break;
-        case GPBDataTypeEnum:
         case GPBDataTypeInt32:
             ret = @"int32";
             break;
@@ -96,6 +94,9 @@ static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
         case GPBDataTypeGroup:
             ret = @"group";
             break;
+        case GPBDataTypeEnum: {
+            ret = [@"enum " stringByAppendingString:field.enumDescriptor.name];
+        } break;
         default:
             LSUnreachableStateWithMessage("Unknown data type: %d", field.dataType);
             break;
@@ -261,6 +262,23 @@ static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
     return isGroup;
 }
 
+- (NSString *)_protoBodyForEnum:(GPBEnumDescriptor *)enumDesc indent:(NSUInteger)indentLevel {
+    // the public API (`getValue:forEnumTextFormatName:`) is too slow (n^2)
+    Ivar valuesIvar = class_getInstanceVariable(object_getClass(enumDesc), "values_");
+    const int32_t *enumValues = *(const int32_t **)(((__bridge void *)enumDesc) + ivar_getOffset(valuesIvar));
+    
+    uint32_t const enumCount = enumDesc.enumNameCount;
+    
+    NSMutableString *ret = [NSMutableString string];
+    [ret appendFormat:@"%@enum %@ {\n", [self _indentStringForLevel:indentLevel], enumDesc.name];
+    for (uint32_t enumIdx = 0; enumIdx < enumCount; enumIdx++) {
+        NSString *enumName = [enumDesc getEnumTextFormatNameForIndex:enumIdx];
+        [ret appendFormat:@"%@%@ = %" __INT32_FMTd__ ";\n", [self _indentStringForLevel:indentLevel+1], enumName, enumValues[enumIdx]];
+    }
+    [ret appendFormat:@"%@}", [self _indentStringForLevel:indentLevel]];
+    return [ret copy];
+}
+
 - (NSString *)_protoBodyForMessage:(GPBDescriptor *)message indent:(NSUInteger)indentLevel {
     NSMutableString *ret = [NSMutableString string];
     
@@ -319,7 +337,7 @@ static NSString *NSStringFromGPBFileSyntax(GPBFileSyntax syntax) {
     }
     [ret appendString:@"\n"];
     
-    NSArray<NSString *> *requiredImports = [self requiredImportsForMessage:message];
+    NSSet<NSString *> *requiredImports = [self requiredImportsForMessage:message];
     if (requiredImports.count) {
         for (NSString *requiredImport in requiredImports) {
             [ret appendFormat:@"import \"%@\";\n", requiredImport];

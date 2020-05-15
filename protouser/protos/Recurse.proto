@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+message Alpha {
+    optional Beta bravo = 2;
+    optional Gamma charlie = 3;
+}
+
+message Beta {
+    optional Alpha alfa = 1;
+    optional Gamma charlie = 3;
+}
+
+message Gamma {
+    optional Alpha alfa = 1;
+    optional Beta bravo = 2;
+}

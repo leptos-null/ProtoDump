@@ -8,6 +8,16 @@
 
 #import "LSProtoAnalyser.h"
 
+/// @c YES if a and b are the same string,
+/// or if @c a and @c b are @c nil
+/// or if one is @c nil and the other has a 0 length
+static BOOL LSNSStringsAreEqual(NSString *a, NSString *b) {
+    if ([a isEqualToString:b]) {
+        return YES;
+    }
+    return (a.length == 0 && b.length == 0);
+}
+
 @implementation LSProtoAnalyser
 
 + (instancetype)sharedInstance {
@@ -77,9 +87,9 @@
                                 [dependencyAnalyser[messageIdentifier] addObject:fieldMessageIdentifier];
                             }
                             if ([dependencyAnalyser[fieldMessageIdentifier] containsObject:messageIdentifier]) {
-                                LSExpectStateWithMessage([fieldMessage.file.objcPrefix isEqualToString:message.file.objcPrefix],
+                                LSExpectStateWithMessage(LSNSStringsAreEqual(fieldMessage.file.objcPrefix, message.file.objcPrefix),
                                                          @"objcPrefix does not match (%@, %@)", fieldMessageIdentifier, messageIdentifier);
-                                LSExpectStateWithMessage([fieldMessage.file.package isEqualToString:message.file.package],
+                                LSExpectStateWithMessage(LSNSStringsAreEqual(fieldMessage.file.package, message.file.package),
                                                          @"package does not match (%@, %@)", fieldMessageIdentifier, messageIdentifier);
                                 if (!dependencyGraph[messageIdentifier]) {
                                     dependencyGraph[messageIdentifier] = [NSMutableArray array];
@@ -113,8 +123,7 @@
 }
 
 - (NSArray<GPBDescriptor *> *)messagesInPackage:(NSString *)package {
-    /* this is morally ambiguous
-     * preferably this would be the otherway around inside the loop */
+    /* preferably this would be the otherway around inside the loop */
     if ([package isEqualToString:@LS_PROTO_ANONYMOUS_PACKAGE_DIRECTORY]) {
         package = @"";
     }
@@ -127,32 +136,8 @@
     return [messages copy];
 }
 
-- (NSArray<NSString *> *)requiredImportsForMessage:(GPBDescriptor *)message {
-    return [[self _importListforMessage:message list:[NSMutableArray array]] copy];
-}
-
-- (BOOL)_messageInSameFile:(GPBDescriptor *)alpha asMessage:(GPBDescriptor *)beta {
-    if (alpha == beta) {
-        return YES;
-    }
-    
-    NSString *alphaPacakge = alpha.file.package;
-    if ([alphaPacakge isEqualToString:beta.file.package]) {
-        static NSString *const componentSeparator = @".";
-        NSArray<NSString *> *alphaComps = [alpha.fullName componentsSeparatedByString:componentSeparator];
-        NSArray<NSString *> *betaComps = [beta.fullName componentsSeparatedByString:componentSeparator];
-        
-        NSUInteger index = [[alphaPacakge componentsSeparatedByString:componentSeparator] count];
-        if (alphaPacakge.length == 0) {
-            index -= 1; /* there's going to be a dot separator missing */
-        }
-        
-        return [alphaComps[index] isEqualToString:betaComps[index]];
-    }
-    return NO;
-}
-
-- (NSMutableArray<NSString *> *)_importListforMessage:(GPBDescriptor *)message list:(NSMutableArray<NSString *> *)list {
+- (NSSet<NSString *> *)requiredImportsForMessage:(GPBDescriptor *)message {
+    NSMutableSet<NSString *> *ret = [NSMutableSet set];
     for (GPBFieldDescriptor *fieldDsc in message.fields) {
         if (fieldDsc.dataType == GPBDataTypeMessage) {
             GPBDescriptor *targetMessage = [fieldDsc.msgClass descriptor];
@@ -183,17 +168,34 @@
                 dirName = @LS_PROTO_ANONYMOUS_PACKAGE_DIRECTORY;
             }
             NSString *importName = [dirName stringByAppendingPathComponent:baseName];
-            if (![list containsObject:importName]) {
-                [list addObject:importName];
-            }
+            [ret addObject:importName];
         }
     }
     for (GPBDescriptor *containedMessage in self.containerGraph[message.fullName]) {
-        /* the reason I decided to internally recycle the list, instead of using a non-mutable,
-         * and then addObjectsFromArray is that this can check for duplicates more easily */
-        [self _importListforMessage:containedMessage list:list];
+        [ret unionSet:[self requiredImportsForMessage:containedMessage]];
     }
-    return list;
+    return [ret copy];
+}
+
+- (BOOL)_messageInSameFile:(GPBDescriptor *)alpha asMessage:(GPBDescriptor *)beta {
+    if (alpha == beta) {
+        return YES;
+    }
+    
+    NSString *alphaPackage = alpha.file.package;
+    if ([alphaPackage isEqualToString:beta.file.package]) {
+        NSString *const componentSeparator = @".";
+        NSArray<NSString *> *alphaComps = [alpha.fullName componentsSeparatedByString:componentSeparator];
+        NSArray<NSString *> *betaComps = [beta.fullName componentsSeparatedByString:componentSeparator];
+        
+        NSUInteger index = [[alphaPackage componentsSeparatedByString:componentSeparator] count];
+        if (alphaPackage.length == 0) {
+            index -= 1; /* there's going to be a dot separator missing */
+        }
+        
+        return [alphaComps[index] isEqualToString:betaComps[index]];
+    }
+    return NO;
 }
 
 - (NSString *)protoName:(GPBDescriptor *)message relativeTo:(GPBDescriptor *)relative {
@@ -211,7 +213,8 @@
 }
 
 - (NSString *)protoNameForMessage:(GPBDescriptor *)message {
-    NSInteger index = (message.containingType.fullName ?: message.file.package).length;
+    NSString *parentName = message.containingType.fullName ?: message.file.package;
+    NSInteger index = parentName.length;
     if (index) {
         /* names with package prefixes have dot seperators */
         index++;
